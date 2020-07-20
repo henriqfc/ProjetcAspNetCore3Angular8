@@ -1,0 +1,110 @@
+<div class="home-search">
+  <custom-spinner name="{{spinner}}"></custom-spinner>
+  <div class="align-middle text-center">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h3>Detalhes do Imóvel</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="vm.Imovel != null">
+    <!-- imoveis -->
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-text">
+            <div class="row" *ngIf="vm.Imovel != null">
+              <div class="card col-sm-12 mb-1">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <ngb-carousel *ngIf="!!vm.Imovel && !!vm.Imovel.imagens" #carousel [interval]="5000"
+                      [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+                      <ng-template ngbSlide *ngFor="let img of vm.Imovel.imagens; index as i">
+                        <div class="carousel-caption">
+                          <h3>Imagem {{i}}</h3>
+                        </div>
+                        <a [href]="img.path" target="_blank" rel="nofollow noopener noreferrer">
+                          <div class="picsum-img-wrapper">
+                            <img [src]="img.path" alt="Imagem {{i + 1}}" width="100%">
+                          </div>
+                        </a>
+                      </ng-template>
+                    </ngb-carousel>
+                  </div>
+                  <div class="col-sm-4 text-justify">
+                    <div class="card-body">
+                      <div class="row mb-1">
+                        <div class="col-sm-12">
+                          <b>
+                            <h5>{{ vm.Imovel.Tipo.nomeTipo }}</h5>
+                          </b>
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <div class="col-sm" [hidden]="!vm.Imovel.valorVenda">
+                          <b>
+                            <h5>Valor de Venda: {{ vm.Imovel.valorVenda | currency }}</h5>
+                          </b>
+                        </div>
+                        <div class="col-sm" [hidden]="!vm.Imovel.valorAluguel">
+                          <b>
+                            <h5>Valor de Aluguel: {{ vm.Imovel.valorAluguel | currency }}</h5>
+                          </b>
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <div class="col-sm">
+                          <b>Rua:</b> {{vm.Imovel.Endereco.rua}}
+                        </div>
+                        <div class="col-sm">
+                          <b>Numero:</b> {{vm.Imovel.numero}}
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <div class="col-sm">
+                          <b>Cidade:</b> {{vm.Imovel.Endereco.cidade}} - {{vm.Imovel.Endereco.uf}}
+                        </div>
+                        <div class="col-sm">
+                          <b>Bairro:</b> {{vm.Imovel.Endereco.bairro}}
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <div class="col-sm">
+                          <b>CEP:</b> {{vm.Imovel.Endereco.cep}}
+                        </div>
+                        <div class="col-sm">
+                          <b>Comodos:</b> {{vm.Imovel.numComodos}}
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <div class="col-sm-4">
+                          <b>Quartos:</b> {{vm.Imovel.numQuartos}}
+                        </div>
+                        <div class="col-sm-4">
+                          <b>Banheiros:</b> {{vm.Imovel.numBanheiros}}
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <div class="card col-sm-12">
+                          <div class="card-body">
+                            <div class="card-title">
+                              <h5>Mais detalhes:</h5>
+                            </div>
+                            <div class="card-text">
+                              {{vm.Imovel.descricao}}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

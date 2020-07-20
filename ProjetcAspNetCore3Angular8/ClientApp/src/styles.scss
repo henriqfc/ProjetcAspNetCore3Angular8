@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/ag-grid-community/dist/styles/ag-theme-balham/sass/ag-theme-balham.scss";
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+.ng-select.custom .ng-select-container {
+  border-radius: 0;
+}
+
+.botaoPesquisar {
+  margin: 1.7rem;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  font-size: 13px;
+  height: 25px;
+}
+body {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.wrapper {
+  display: flex;
+}
+footer i {
+  padding: 1em;
+}
+.container {
+  max-width: 90%;
+}
+/* .btn-primary {
+  background-color: black;
+  border-color: black;
+} */
