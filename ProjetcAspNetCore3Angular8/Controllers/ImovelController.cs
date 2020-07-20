@@ -27,10 +27,7 @@ namespace ProjetcAspNetCore3Angular8.Controllers
         {
             _imovelBLL = new ImovelBLL();
             var imoveis = _imovelBLL.GetAll(filtro);
-            //foreach (var i in imoveis)
-            //{
-            //    i.imagens = _imovelBLL.GetImagens(i.idImovel).ToList();
-            //}
+            
             return imoveis.ToArray();
         }
         [Route("api/[controller]/Get")]
@@ -44,7 +41,7 @@ namespace ProjetcAspNetCore3Angular8.Controllers
         [HttpPost]
         public long Insert(ImovelViewModel i)
         {
-            //Imovel imovel = JsonConvert.DeserializeObject<Imovel>(i);
+            
             _imovelBLL = new ImovelBLL();
             _enderecoBLL = new EnderecoBLL();
             if (i.idEndereco == 0)
@@ -72,10 +69,7 @@ namespace ProjetcAspNetCore3Angular8.Controllers
                     _enderecoBLL.Insert(i.Endereco);
                 }
             }
-            //if (i.idEndereco == 0)
-            //{
-            //    _enderecoBLL.Insert(i.Endereco);
-            //}
+            
             return _imovelBLL.Update(i);
         }
         [Route("api/[controller]/Delete")]
@@ -100,7 +94,7 @@ namespace ProjetcAspNetCore3Angular8.Controllers
             {
                 if (file.Length > 0)
                 {
-                    // full path to file in temp location
+                    
                     var filePath = Directory.GetCurrentDirectory();
                     string filePathSalvar = "Resources\\img\\idImovel-" + idImovel;
                     filePath += "\\" + filePathSalvar;
