@@ -16,3 +16,12 @@ O sistema possui um pequeno menu na parte de cima com a tela inicial e com a tel
 
 Na tela inicial, existe um filtro e um espaço para amostra dos imóveis pesquisados.
 Na tela de gerenciamento existe um espaço para listagem, cadastro, edição e exclusão de imóveis.
+
+
+# Banco de Dados
+
+O arquivo sql com as tabelas criadas está dentro da pasta ProjectAspNetCore3Angular8.
+
+# Dúvidas
+
+Qualquer dúvida, mande e-mail para henriq_182@hotmail.com
